@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/market-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uzum</title>
+  </head>
+  <body>
+    <header>
+      <nav class="flex gap-[37px] mx-[104px] my-[26px] items-center ">
+        <div class="left-side-nav flex gap-[37px] items-center">
+          <img src="./assets/logo.png" alt="logo-Image" class="logo-Image" id="logo1" href="../index.html">
+          <button class="katalog-button w-[80px] h-[32px] text-[#3333CC] bg-[#EAEAF9] rounded-[4px] ">Каталог</button>
+        </div>
+        <div class="search-nav flex items-center">
+          <input type="search" name="" id="" class="px-[15px] w-[598px] h-[32px] rounded-[4px] border border-[#E2EAF1]" placeholder="Искать товары">
+          <img src="./assets/search.png" alt="search-logo" class="w-3 h-3 absolute right-[460px]">
+        </div>
+        <div class="right-side-nav flex items-center gap-5">
+          <div class="profile-nav flex items-center gap-1">
+            <img src="./assets/profile.png" alt="profile-img">
+            <a href="" id="loginBtn" class="text-for-account">miraziz</a>
+          </div>
+          <a href="./Favorites.html" class="favourites">Избранное</a>
+          <div class="basket-nav flex items-center gap-3">
+            <a href="">Карзина</a>
+            <p class="text-white basket-count bg-[#7000FF] w-4 h-4  text-[12px] rounded-[2px] flex items-center justify-center">3</p>
+          </div>
+        </div>
+      </nav>
+      <div class="swiper mt-10">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <img src="./assets/firstbanner.jpg" alt="" class="banner ">
+          </div>
+          <div class="swiper-slide">
+            <div>
+              <img src="./assets/banner2.jpg" alt="" class="banner">
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div>
+                <img src="./assets/firstbanner.jpg" alt="" class="banner">
+            </div>
+          </div>
+        </div>
+
+        <div class="vectors">
+          <img src="./assets/arrow-left-circle 2.png" alt="" class="swiper-button-next">
+          <img src="./assets/arrow-left-circle 1.png" alt="" class="swiper-button-prev">
+        </div>
+        
+    
+         
+        <div class="swiper-pagination">
+          
+        </div>
+      </div>
+    </header>
+    <main>
+      
+    </main>
+
+
+    <div class="modal-for-search hidden h-[191px] absolute top-[58px]  w-screen flex justify-center pl-[446px] flex-col">
+    </div>
+    <div class="modal-for-catalog hidden h-[418px]">
+      <p class="text-[#ACACAC] text-12px kategoriya">Категории товаров</p>
+    </div>
+    <div class="modal-overlay" id="modal-overlay">
+      <div class="modal-for-number items-between justify-between flex flex-col w-[400px] h-[500px] p-5 gap-2 rounded-[5px]">
+        <div class="flex flex-col gap-2">
+          <div class="xVector flex justify-between items-center m-3 cursor-pointer text-[20px] font-bold">
+            <div></div>
+            <p class="raunded-full" id="close-modal">X</p>
+          </div>
+          <p class="text-[25px] font-semibold">Введите номер телефона</p>
+          <p>Отправим смс с кодом подтверждения</p>
+          <input type="text" id="phoneInput" placeholder="Введите Номер" class="inputforphone h-[3rem] w-[350px] border-[1px] bordered">
+          <button class="logIn">Войти</button>
+        </div>
+        <p class="politics">Авторизуясь, вы соглашаетесь c <a href="https://legal.uzum.uz/privacy-policy.html">политикой обработки персональных данных</a></p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/assets/market-logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Liked</title>
+</head>
+<body>
+    <nav class="flex gap-[37px] mx-[104px] my-[26px] items-center ">
+        <div class="left-side-nav flex gap-[37px] items-center">
+          <img src="../assets/logo.png" alt="logo-Image" id="logo1" href="../index.html">
+          <button class="katalog-button w-[80px] h-[32px] text-[#3333CC] bg-[#EAEAF9] rounded-[4px] ">Каталог</button>
+        </div>
+        <div class="search-nav flex items-center">
+          <input type="search" name="" id="" class="px-[15px] w-[598px] h-[32px] rounded-[4px] border border-[#E2EAF1]" placeholder="Искать товары">
+          <img src="../assets/search.png" alt="search-logo" class="w-3 h-3 absolute right-[460px]">
+        </div>
+        <div class="right-side-nav flex items-center gap-5">
+          <div class="profile-nav flex items-center gap-1">
+            <img src="../assets/profile.png" alt="profile-img">
+            <a href="" id="loginBtn" class="text-for-account">miraziz</a>
+          </div>
+          <a href="./liked.html" class="favourites">Избранное</a>
+          <div class="basket-nav flex items-center gap-3">
+            <a href="">Карзина</a>
+            <p class="text-white basket-count bg-[#7000FF] w-4 h-4  text-[12px] rounded-[2px] flex items-center justify-center">3</p>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div class="mainText">
+          <div class="images">
+            <div class="images1">
+              <img src="" alt="" class="img1">
+              <img src="" alt="" class="img1">
+              <img src="" alt="" class="img1">
+              <img src="" alt="" class="img1">
+            </div>
+            <div class="mainImg">
+              <img src="" alt="" class="mainImage img1">
+            </div>
+          </div>
+          <div class="text">
+            <p class="titleProd">Cтиральный порошок Tide, Color Lenor Touch, автомат, 3 кг</p>
+          <div class="prices">
+          <p class="newPrice">30 000 сум</p>
+          <s class="OldPrice">45 000 сум</s>
+          </div>
+          <div class="counter">
+            <button class="decrement" id="decrease">-</button>
+            <input type="text" id="quantity" value="1" class="counter-value" readonly>
+            <button class="increment" id="increase">+</button>
+          </div>
+          
+            <div class="vector111"></div>
+            <p class="desc">Станьте востребованным разработчиком. Вы изучите основы программирования и основные концепции компьютерных наук, цифровые технологии, операционные системы, программное обеспечение, базы данных, системы аналитики, языки программирования и многое другое. Познакомитесь с тестированием и системным анализом. На программе сможете сделать осознанный выбор специализации и технологий, прокачаться в выбранном направлении.</p>
+            <div class="buttons-main">
+              <button class="addtocarz btn">Добавить в карзину</button>
+              <button class="addtoliked btn">Добавить в избранное</button>
+            </div>
+          </div>
+        </div>
+        <section class="descMain">
+          <p class="opisaniye">Описание товара</p>
+          <p class="desc2">Стиральный порошок Tide Lenor Touch подходит для использования в стиральных машинах любого типа. Сочетание очищающего эффекта порошка и смягчающего эффекта Lenor делает вещи безупречно чистыми, нежными и свежими. Стирайте согласно рекомендациям на ярлыках текстильных изделий. Рекомендованный режим стирки — от 20 минут при температуре воды 30'C и выше. Обратите внимание: порошок не предназначен для стирки изделий из шерсти и шелка. Синтетическое моющее средство порошкообразное для использования в стиральных машинах любого типа. Рекомендованная температура стирки указана на ярлыках текстильных изделий. Не перегружайте стиральную машину. Оставьте зазор в ширину ладони между загруженным бельем и барабаном. Белье будет двигаться свободно, стирка будет более эффективной.</p>
+
+        </section>
+        <section>
+          <p class="likeTowars">Похожие товары</p>
+          <div class="forProducts"></div>
+        </section>
+      </main>
+
+      <div class="modal-for-search hidden h-[191px] absolute top-[58px]  w-screen flex justify-center pl-[446px] flex-col">
+      </div>
+      <div class="modal-for-catalog hidden h-[418px]">
+        <p class="text-[#ACACAC] text-12px kategoriya">Категории товаров</p>
+      </div>
+      <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-for-number items-between justify-between flex flex-col w-[400px] h-[500px] p-5 gap-2 rounded-[5px]">
+          <div class="flex flex-col gap-2">
+            <div class="xVector flex justify-between items-center m-3 cursor-pointer text-[20px] font-bold">
+              <div></div>
+              <p class="raunded-full" id="close-modal">X</p>
+            </div>
+            <p class="text-[25px] font-semibold">Введите номер телефона</p>
+            <p>Отправим смс с кодом подтверждения</p>
+            <input type="text" id="phoneInput" placeholder="Введите Номер" class="inputforphone h-[3rem] w-[350px] border-[1px] bordered">
+            <button class="logIn">Войти</button>
+          </div>
+          <p class="politics">Авторизуясь, вы соглашаетесь c <a href="https://legal.uzum.uz/privacy-policy.html">политикой обработки персональных данных</a></p>
+        </div>
+      </div>
+      <script type="module" src="./scripts/navbar.js"></script>
+    <script type="module" src="../scripts/liked.js"></script>
+</body>
+</html>

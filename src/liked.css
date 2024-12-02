@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", "Font";
+}
+
+@font-face {
+  font-family: "Font";
+  src: url(../fonts/Font/Gilroy-Light.otf);
+}
+
+
+nav a{
+    font-family:  "Font";
+    text-decoration: none;
+  }
+  
+  .profile-nav:hover,
+  .basket-nav:hover,
+  .favourites:hover{
+    background-color: gray;
+    opacity: .5;
+    transition: .2s;
+    border-radius: 3px;
+  }
+
+  .logo-Image{
+    cursor: pointer;
+  }
+  main{
+    margin-top: 50px;
+  }
+  .images{
+    display: flex;
+    gap: 7px;
+  }
+  .images1{
+    display: flex;
+    flex-direction: column;
+    width: 122px;
+    gap: 6px;
+    align-items: center;
+  }
+  .mainText{
+    display: flex;
+    justify-content: center;
+    gap: 53px;
+  }
+
+  .mainImage{
+    width: 380px;
+    height: 506px;
+  }
+
+  .img1,
+  .mainImage{
+    background-color: rgba(128, 128, 128, .2);
+  }
+  .titleProd{
+    font-size: 32px ;
+    max-width: 817px;
+    font-weight: 600;
+  }
+  .newPrice{
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .prices{
+    display: flex;
+    gap: 15px
+    ;
+    align-items: center;
+  }
+  .OldPrice{
+    color: #ACACAC;
+    font-size: 21px;
+    font-weight: 500;
+  }
+
+  .counter {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100px;
+    justify-content: space-between;
+  }
+  
+  .counter button {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .counter button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .counter-value {
+    width: 30px;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent;
+  }
+  .vector111{
+    width: 618px;
+    height: 1px;
+    background-color: #ACACAC;
+  }
+  .desc{
+    font-size: 14px;
+      max-width: 500px;
+  }
+
+  .text{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .btn{
+    width: 176px;
+    height: 32px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .addtocarz{
+    background-color: #7000FF;
+    color: white;
+    border: none;
+  }
+  .addtoliked{
+    color: #7000FF;
+    border: 1px solid #7000FF;
+    background-color: white;
+  }
+
+  .buttons-main{
+    display: flex;
+    gap: 7px;
+  }
+  .descMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    align-items: center;
+    margin-top: 86px;
+    gap: 21px;
+  }
+  .desc2{
+    max-width: 793px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .opisaniye{
+    font-size: 21px;
+    font-weight: 600;
+
+  }
+  .forProducts{
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .likeTowars{
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 70px;
+  }

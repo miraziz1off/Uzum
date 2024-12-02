@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+nav a{
+    font-family:  "Font";
+    text-decoration: none;
+  }
+  
+  .profile-nav:hover,
+  .basket-nav:hover,
+  .favourites:hover{
+    background-color: gray;
+    opacity: .5;
+    transition: .2s;
+    border-radius: 3px;
+  }
+
+  .logo-Image{
+    cursor: pointer;
+  }
+
+  .favouritesText{
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  main{
+    margin: 100px 0 0 105px;
+  }

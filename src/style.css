@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: "Font";
+  src: url(../fonts/Font/Gilroy-Light.otf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Font";
+}
+nav a{
+  font-family: "Poppins";
+  text-decoration: none;
+}
+
+.profile-nav:hover,
+.basket-nav:hover,
+.favourites:hover{
+  background-color: gray;
+  opacity: .5;
+  transition: .2s;
+  border-radius: 3px;
+}
+.swiper {
+  width: 1320px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.swiper-slide img{
+  height: 400px;
+  width: 1220px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(87.38deg, #9643FF 1.53%, #5200BA 98.76%);
+  border-radius: 20px;
+  padding: 45px;
+  color: white;
+  height: 600px;
+  width: 90%;
+  overflow: hidden;
+  border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.swiper-slide h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  
+}
+
+.swiper-slide p {
+  font-size: 1rem;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+.swiper-pagination{
+  margin-bottom: 100px;
+}
+
+.swiper-pagination-bullet {
+  background-color: white;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #2575fc;
+  opacity: 1;
+}
+.banner{
+  border-radius: 10px;
+}
+
+main section{
+  margin: 0 100px;
+
+}
+
+.title-category{
+  font-size: 32px ;
+  font-weight: 600;
+  line-height: 40px;
+  font-family: "Poppins";
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.product-card {
+  width: 100%;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+  margin-right: 10px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.product-card .like-icon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: start;
+}
+
+.product-card .old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+  text-align: start;
+}
+
+.product-card .new-price {
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: start;
+
+}
+
+.product-card .cart-icon {
+  position: absolute;
+  bottom: 16px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  cursor: pointer;
+}
+
+div[class^="divfor-"] {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 0px; 
+  margin-top: 50px; 
+}
+
+.like-icon:active{
+  color: blue;
+}
+
+.products-image{
+  background-color: rgba(200, 200, 200, 0.3);
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  
+}
+.modal-for-search {
+  padding-left: 446px;
+  padding-top: 20px;
+  z-index: 10;
+  max-width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 58px;
+  overflow-y: auto;
+  max-height: 300px;
+  background-color: white;
+}
+
+.modal-for-search p {
+  font-family: "Poppins", sans-serif;
+  margin: 4px 0;
+  font-size: 14px;
+  color: black  ;
+  cursor: pointer;
+}
+
+.modal-for-search p:first-child {
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #ACACAC;
+}
+.hidden{
+  display: none;
+
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+
+.modal-for-catalog {
+  z-index: 10;
+  padding-left: 360px;
+  padding-top: 20px;
+  z-index: 10;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 58px;
+  overflow-y: auto;
+  max-height: 200px;
+  background-color: white;
+}
+
+.hidden1 {
+  /* display: none; */
+  background: white;
+}
+
+.category-item {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.category-item:hover {
+  color: #7000FF;
+  text-decoration: none;
+}
+
+.category-item span:first-child {
+  font-weight: 500;
+}
+
+
+.category-item span:first-child {
+  text-transform: uppercase;
+  font-family: "Poppins";
+}
+.kategoriya{
+  margin-bottom: 7px;
+}
+
+.category-count{
+  background-color: #7000FF;
+  border-radius: 2px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  padding: 2px;
+}
+
+.katalog-button:hover{
+  background-color: gray;
+  opacity: .5;
+  transition: .2s;
+}
+.inputforphone{
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+.inputforphone:focus{
+  border: 1px solid gray;
+}
+.logIn{
+  width: 350px;
+  height: 3rem;
+  background-color: blue;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.politics a{
+  text-decoration: underline;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 00px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  padding-bottom: 00px;
+  justify-content: center;
+  align-items: center; 
+  z-index: 10;
+}
+
+.modal-overlay.active {
+  display: flex; 
+}
+.modal-for-number {
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; 
+}
+
+.modal-for-number.active {
+  transform: translateY(0); 
+  width: 400px;
+  padding: 20px;
+}
