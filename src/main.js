@@ -4,6 +4,12 @@ import { reload } from '../scripts/utils.js';
 import { createProductCard } from '../components/productsIndex.js';
 import axios from 'axios';
 
+
+const logobutton = document.querySelector('#logo1');
+logobutton.onclick = ()=>{
+  window.location.hred = './index.html'
+}
+
 const swiper = new Swiper('.swiper', {
     spaceBetween: 0,
     loop: true,
@@ -135,6 +141,12 @@ const createCatalogModal = (products, container) => {
 
     categoryItem.appendChild(categoryName);
     categoryItem.appendChild(categoryCount);
+
+    categoryItem.addEventListener('click', () => {
+      localStorage.setItem('selectedCategory', category); 
+      window.location.href = './catalog.html';
+    });
+
     container.appendChild(categoryItem);
   });
 };
@@ -194,5 +206,179 @@ modalOverlay.addEventListener('click', (e) => {
 });
 
 
+document.getElementById("loginBtn").addEventListener("click", () => {
+  document.getElementById("modal-overlay").classList.remove("hidden");
+  fetch("http://localhost:3001/users")
+      .then(response => response.json())
+      .then(users => setupPhoneModal(users));
+});
 
+document.getElementById("close-modal").addEventListener("click", () => {
+  document.getElementById("modal-overlay").classList.add("hidden");
+});
 
+const setupPhoneModal = (users) => {
+  const phoneInput = document.getElementById("phoneInput");
+  const nameInput = document.getElementById("nameSection");
+  const submitButton = document.getElementById("submitButton");
+  const logoutButton = document.getElementById("logoutButton");
+  const loginBtn = document.getElementById("loginBtn");
+
+  submitButton.onclick = () => {
+      const phone = phoneInput.value.trim();
+      if (!phone) {
+          alert("Введите номер телефона.");
+          return;
+      }
+
+      const existingUser = users.find(user => user.phone === phone);
+      if (existingUser) {
+          loginBtn.textContent = existingUser.name;
+          document.getElementById("modal-overlay").classList.add("hidden");
+      } else {
+          nameInput.style.display = "block";
+          nameInput.oninput = () => {
+              if (nameInput.value.trim()) {
+                  submitButton.textContent = "Создать аккаунт";
+                  submitButton.onclick = () => {
+                      const name = nameInput.value.trim();
+                      if (!name) {
+                          alert("Введите имя.");
+                          return;
+                      }
+
+                      const newUser = {
+                          phone,
+                          name,
+                          liked: [],
+                          favourites: []
+                      };
+
+                      fetch("http://localhost:3001/users", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify(newUser)
+                      })
+                      .then(response => response.json())
+                      .then(createdUser => {
+                          alert(`Пользователь ${createdUser.name} успешно создан!`);
+                          loginBtn.textContent = createdUser.name;
+                          document.getElementById("modal-overlay").classList.add("hidden");
+                      });
+                  };
+              }
+          };
+      }
+  };
+
+  logoutButton.onclick = () => {
+      loginBtn.textContent = "Войти";
+      phoneInput.value = "";
+      nameInput.value = "";
+      nameInput.style.display = "none";
+      logoutButton.style.display = "none";
+      document.getElementById("modal-overlay").classList.add("hidden");
+  };
+};
+const nameInput = document.getElementById("nameSection");
+const submitButton = document.getElementById("submitButton");
+const logoutButton = document.getElementById("logoutButton");
+const loginText = document.querySelector(".text-for-account");
+
+const API_URL = "http://localhost:3001/users";
+
+document.addEventListener("DOMContentLoaded", () => {
+const storedUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (storedUser) {
+  updateFavoritesDisplay(currentUser.favourites);
+  handleLoggedInState(storedUser);
+}
+});
+
+async function authenticateUser(phone) {
+try {
+  const response = await fetch(API_URL);
+  const users = await response.json();
+
+  const user = users.find((user) => user.phone === phone);
+
+  if (user) {
+    handleLoggedInState(user);
+  } else {
+    nameInput.style.display = "block";
+    nameInput.focus();
+  }
+} catch (error) {
+  console.error("Ошибка при аутентификации:", error);
+}
+}
+
+async function registerUser(phone, name) {
+const newUser = {
+  phone,
+  name,
+  liked: [],
+  favourites: [],
+};
+
+try {
+  const response = await fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify(newUser),
+  });
+
+  if (response.ok) {
+    handleLoggedInState(newUser);
+  } else {
+    console.error("Ошибка при регистрации пользователя");
+  }
+} catch (error) {
+  console.error("Ошибка при регистрации:", error);
+}
+}
+
+function handleLoggedInState(user) {
+localStorage.setItem("currentUser", JSON.stringify(user));
+loginText.textContent = user.name;
+phoneInput.style.display = "none";
+nameInput.style.display = "none";
+submitButton.style.display = "none";
+logoutButton.style.display = "block";
+const sendsmsP = document.querySelector('.sendsms');
+const writenumberP = document.querySelector('.writenumber');
+
+writenumberP.textContent = 'Вы успешно вошли в аккаунт';
+sendsmsP.textContent = 'Чтобы выйти нажмите на кнопку';
+}
+
+logoutButton.addEventListener("click", () => {
+localStorage.removeItem("currentUser");
+loginText.textContent = "Войти";
+phoneInput.style.display = "block";
+submitButton.style.display = "block";
+logoutButton.style.display = "none";
+nameInput.style.display = "none";
+phoneInput.value = "";
+nameInput.value = "";
+});
+
+submitButton.addEventListener("click", () => {
+const phone = phoneInput.value.trim();
+const name = nameInput.value.trim();
+
+if (!phone) {
+  alert("Введите номер телефона!");
+  return;
+}
+
+const storedUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (!storedUser) {
+  authenticateUser(phone).then(() => {
+    if (nameInput.style.display === "block" && name) {
+      registerUser(phone, name);
+    }
+  });
+}
+});

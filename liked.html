@@ -20,7 +20,7 @@
         <div class="right-side-nav flex items-center gap-5">
           <div class="profile-nav flex items-center gap-1">
             <img src="../assets/profile.png" alt="profile-img">
-            <a href="" id="loginBtn" class="text-for-account">miraziz</a>
+            <a href="" id="loginBtn" class="text-for-account">Войти</a>
           </div>
           <a href="./liked.html" class="favourites">Избранное</a>
           <div class="basket-nav flex items-center gap-3">
@@ -85,15 +85,19 @@
               <div></div>
               <p class="raunded-full" id="close-modal">X</p>
             </div>
-            <p class="text-[25px] font-semibold">Введите номер телефона</p>
-            <p>Отправим смс с кодом подтверждения</p>
-            <input type="text" id="phoneInput" placeholder="Введите Номер" class="inputforphone h-[3rem] w-[350px] border-[1px] bordered">
-            <button class="logIn">Войти</button>
+            <p class="writenumber text-[25px] font-semibold">Введите номер телефона</p>
+            <p class="sendsms">Отправим смс с кодом подтверждения</p>
+            <input type="text" id="phoneInput" pattern="[0-9+]+" placeholder="Введите Номер" class="inputforphone h-[3rem] w-[350px] border-[1px] bordered">
+          <input type="text" id="nameSection" placeholder="Введите Имя" class=" h-[3rem] w-[350px] border-[1px] bordered inputt" style="display: none;">
+            <button id="submitButton" class="logIn">Войти</button>
+          <button id="logoutButton" style="display: none;">Выйти</button>
+
           </div>
           <p class="politics">Авторизуясь, вы соглашаетесь c <a href="https://legal.uzum.uz/privacy-policy.html">политикой обработки персональных данных</a></p>
         </div>
       </div>
       <script type="module" src="./scripts/navbar.js"></script>
     <script type="module" src="../scripts/liked.js"></script>
+
 </body>
 </html>

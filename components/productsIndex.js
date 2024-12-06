@@ -12,6 +12,7 @@ export function createProductCard(product) {
 
     likeIcon.addEventListener('click', function() {
         likeImage.src = '../assets/blueliked.png';
+        
     });
   
     const productImage = document.createElement('img');
@@ -26,12 +27,12 @@ export function createProductCard(product) {
   
     const oldPrice = document.createElement('p');
     oldPrice.classList.add('old-price');
-    oldPrice.textContent = product.oldPrice || '230 000 сум';
+    oldPrice.textContent = product.discountPercentage || '230 000 сум';
     productCard.appendChild(oldPrice);
   
     const newPrice = document.createElement('p');
     newPrice.classList.add('new-price');
-    newPrice.textContent = product.newPrice || '230 000 сум';
+    newPrice.textContent = product.price || '230 000 сум';
     productCard.appendChild(newPrice);
   
     const cartIcon = document.createElement('div');
