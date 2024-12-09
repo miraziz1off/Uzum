@@ -307,7 +307,7 @@ try {
     nameInput.focus();
   }
 } catch (error) {
-  console.error("Ошибка при аутентификации:", error);
+  console.error(error);
 }
 }
 
@@ -331,7 +331,7 @@ try {
     console.error("Ошибка при регистрации пользователя");
   }
 } catch (error) {
-  console.error("Ошибка при регистрации:", error);
+  console.error(error);
 }
 }
 

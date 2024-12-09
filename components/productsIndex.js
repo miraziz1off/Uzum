@@ -84,8 +84,6 @@ export function createProductCard(product) {
     productCard.appendChild(cartIcon);
 
     cartImage.onclick = ()=>{
-        // console.log(2121);
-        
         cartImage.src = ''
     }
 

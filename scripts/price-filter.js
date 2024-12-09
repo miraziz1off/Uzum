@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const minRange = document.getElementById("priceRangeMin");
     const maxRange = document.getElementById("priceRangeMax");
   
-    // Обновляет диапазон при изменении полей ввода
     function updateRangesFromInputs() {
       const minValue = parseInt(minInput.value) || 0;
       const maxValue = parseInt(maxInput.value) || 5000000;
@@ -15,21 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   
-    // Обновляет поля ввода при изменении ползунков
     function updateInputsFromRanges() {
       minInput.value = minRange.value;
       maxInput.value = maxRange.value;
     }
   
-    // События для ввода
     minInput.addEventListener("input", updateRangesFromInputs);
     maxInput.addEventListener("input", updateRangesFromInputs);
   
-    // События для ползунков
     minRange.addEventListener("input", updateInputsFromRanges);
     maxRange.addEventListener("input", updateInputsFromRanges);
   
-    // События для валидации диапазона
     minRange.addEventListener("change", () => {
       if (parseInt(minRange.value) > parseInt(maxRange.value)) {
         maxRange.value = minRange.value;

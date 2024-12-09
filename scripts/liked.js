@@ -83,7 +83,6 @@ Products()
 
 
 const addtoliked = document.querySelector('.addtoliked');
-window.location.href = '../favourites.html'
 
 addtoliked.onclick = ()=>{
   addtoliked.innerHTML = 'Добавлено';
@@ -108,21 +107,21 @@ addtoliked.onclick = ()=>{
                 })
                     .then((res) => res.json())
                     .then((updatedUser) => {
-                        console.log('Обновлено успешно:', updatedUser);
+                        console.log('Обновлено успешно');
 
                         localStorage.setItem('currentUser', JSON.stringify(updatedUser));
                     })
                     .catch((error) => {
-                        console.error('Ошибка при обновлении пользователя:', error);
+                        console.error(error);
                     });
             } else {
-                console.log('Этот товар уже добавлен в "favourites".');
+                console.log('Этот товар уже есть в "favourites".');
             }
         } else {
-            console.log('Пользователь не найден.');
+            console.log('Пользователь нету.');
         }
     })
     .catch((error) => {
-        console.error('Ошибка при запросе пользователей:', error);
+        console.error(error);
     });
 }

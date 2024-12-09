@@ -16,7 +16,6 @@ const fetchUsers = () => {
       return users;
     })
     .catch((error) => {
-      console.error('Ошибка при получении пользователей:', error);
     });
 };
 
@@ -33,17 +32,28 @@ const displayFavourites = () => {
       const favouriteProducts = user.favourites; 
 
       
-      const validFavouriteProducts = favouriteProducts.filter(product => product !== undefined && product !== null);
+      const validFavouriteProducts = favouriteProducts.filter(product => product !== undefined || null);
       reload(validFavouriteProducts, mainContainer, (product) => {
         if (product) { 
           const productCard = createProductCard(product);
           mainContainer.appendChild(productCard);
         }
       });
+      const main = document.querySelector('main');
+
+      if(validFavouriteProducts.length === 0 || null || undefined){
+        const nofound = document.querySelector('.nofound');
+        nofound.style.display = 'flex';
+        main.style.display = 'none';
+      }else{
+        main.style.display = 'block';
+      }
     })
     .catch((error) => {
-      console.error('Ошибка при получении пользователей:', error);
+      console.error(error);
     });
 };
 
 document.addEventListener('DOMContentLoaded', displayFavourites); 
+
+

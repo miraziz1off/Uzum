@@ -6,7 +6,6 @@ import { reload } from '../scripts/utils.js';
 const selectedCategory = localStorage.getItem('selectedCategory');
 const main = document.querySelector('main');
 
-// Элементы фильтрации
 const minPriceInput = document.getElementById('minPrice');
 const maxPriceInput = document.getElementById('maxPrice');
 const filterButton = document.getElementById('filterButton');
@@ -19,7 +18,6 @@ const fetchedProducts = () => {
 
 const products1 = document.querySelector('.products');
 
-// Отображение продуктов по категории и диапазону цен
 const displayCategoryProducts = (category, minPrice = 0, maxPrice = Infinity) => {
   fetchedProducts()
     .then((products) => {
@@ -36,7 +34,6 @@ const displayCategoryProducts = (category, minPrice = 0, maxPrice = Infinity) =>
     });
 };
 
-// Обработчик кнопки фильтрации
 filterButton.addEventListener('click', () => {
   const minPrice = parseFloat(minPriceInput.value) || 0;
   const maxPrice = parseFloat(maxPriceInput.value) || Infinity;
@@ -48,10 +45,9 @@ filterButton.addEventListener('click', () => {
   }
 });
 
-// Изначальное отображение продуктов
 if (selectedCategory) {
   displayCategoryProducts(selectedCategory);
-  localStorage.removeItem('selectedCategory'); // Очистка после использования
+  localStorage.removeItem('selectedCategory');
 } else {
   main.innerHTML = '<p>Категория не выбрана.</p>';
 }
