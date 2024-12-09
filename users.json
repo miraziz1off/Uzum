@@ -1,95 +1,72 @@
 {
   "users": [
     {
-      "id": "2d5a",
-      "phone": "4092094820482",
-      "name": "Miraziz",
+      "id": "b48c",
+      "phone": "490490234234",
+      "name": "Kamkldnada",
       "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "7b80",
-      "phone": "32323",
-      "name": "Miraziz",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "edd9",
-      "phone": "323232",
-      "name": "miajara",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "07f5",
-      "phone": "31231312",
-      "name": "miajara",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "1b31",
-      "phone": "23424223",
-      "name": "Miraziz",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "7711",
-      "phone": "66655555",
-      "name": "Samirjon",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "653e",
-      "phone": "66655555",
-      "name": "Samirjon",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "019c",
-      "phone": "4897248724892",
-      "name": "Miraziz",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "1d2f",
-      "phone": "4897248724892",
-      "name": "Miraziz",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "e2f4",
-      "phone": "+998953510555",
-      "name": "SamirLox",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "4f42",
-      "phone": "+998953510555",
-      "name": "SamirLox",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "da35",
-      "phone": "21212121",
-      "name": "21212121",
-      "liked": [],
-      "favourites": []
-    },
-    {
-      "id": "0aac",
-      "phone": "21212121",
-      "name": "21212121",
-      "liked": [],
-      "favourites": []
+      "favourites": [
+        {
+          "id": 3,
+          "title": "Powder Canister",
+          "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
+          "category": "beauty",
+          "price": 14.99,
+          "discountPercentage": 18.14,
+          "rating": 3.82,
+          "stock": 59,
+          "tags": [
+            "beauty",
+            "face powder"
+          ],
+          "brand": "Velvet Touch",
+          "sku": "9EN8WLT2",
+          "weight": 8,
+          "dimensions": {
+            "width": 24.16,
+            "height": 10.7,
+            "depth": 11.07
+          },
+          "warrantyInformation": "2 year warranty",
+          "shippingInformation": "Ships in 1-2 business days",
+          "availabilityStatus": "In Stock",
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Very happy with my purchase!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Ethan Thompson",
+              "reviewerEmail": "ethan.thompson@x.dummyjson.com"
+            },
+            {
+              "rating": 4,
+              "comment": "Great value for money!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Levi Hicks",
+              "reviewerEmail": "levi.hicks@x.dummyjson.com"
+            },
+            {
+              "rating": 5,
+              "comment": "Highly impressed!",
+              "date": "2024-05-23T08:56:21.618Z",
+              "reviewerName": "Hazel Gardner",
+              "reviewerEmail": "hazel.gardner@x.dummyjson.com"
+            }
+          ],
+          "returnPolicy": "60 days return policy",
+          "minimumOrderQuantity": 25,
+          "meta": {
+            "createdAt": "2024-05-23T08:56:21.618Z",
+            "updatedAt": "2024-05-23T08:56:21.618Z",
+            "barcode": "0516267971277",
+            "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+          },
+          "images": [
+            "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/1.png"
+          ],
+          "thumbnail": "https://cdn.dummyjson.com/products/images/beauty/Powder%20Canister/thumbnail.png"
+        }
+      ]
     }
   ]
 }

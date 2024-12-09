@@ -31,3 +31,12 @@ nav a{
   main{
     margin: 100px 0 0 105px;
   }
+
+  .favourites-container{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+  }
+
+  .product-card{
+    display: f;
+  }

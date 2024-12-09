@@ -227,7 +227,6 @@ const setupPhoneModal = (users) => {
   submitButton.onclick = () => {
       const phone = phoneInput.value.trim();
       if (!phone) {
-          alert("Введите номер телефона.");
           return;
       }
 
@@ -261,7 +260,6 @@ const setupPhoneModal = (users) => {
                       })
                       .then(response => response.json())
                       .then(createdUser => {
-                          alert(`Пользователь ${createdUser.name} успешно создан!`);
                           loginBtn.textContent = createdUser.name;
                           document.getElementById("modal-overlay").classList.add("hidden");
                       });
@@ -291,7 +289,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const storedUser = JSON.parse(localStorage.getItem("currentUser"));
 
 if (storedUser) {
-  updateFavoritesDisplay(currentUser.favourites);
   handleLoggedInState(storedUser);
 }
 });

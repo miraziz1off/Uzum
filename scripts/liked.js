@@ -79,3 +79,50 @@ function generateSimilarProducts(products, category) {
   reload(similarProducts, productsContainer, createProductCard);
 }
 Products()
+
+
+
+const addtoliked = document.querySelector('.addtoliked');
+window.location.href = '../favourites.html'
+
+addtoliked.onclick = ()=>{
+  addtoliked.innerHTML = 'Добавлено';
+
+  const currentUser = JSON.parse(localStorage.getItem('currentUser')); 
+    
+        fetch('http://localhost:3001/users')
+    .then((res) => res.json())
+    .then((users) => {
+        const user = users.find(user => user.phone === currentUser.phone); 
+
+        if (user) {
+            const productId = product.id;
+            const isProductInFavourites = user.favourites.some(fav => fav.id === productId);
+
+            if (!isProductInFavourites) {
+                user.favourites.push(product);
+
+                fetch(`http://localhost:3001/users/${user.id}`, {
+                    method: 'PUT',
+                    body: JSON.stringify(user),
+                })
+                    .then((res) => res.json())
+                    .then((updatedUser) => {
+                        console.log('Обновлено успешно:', updatedUser);
+
+                        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+                    })
+                    .catch((error) => {
+                        console.error('Ошибка при обновлении пользователя:', error);
+                    });
+            } else {
+                console.log('Этот товар уже добавлен в "favourites".');
+            }
+        } else {
+            console.log('Пользователь не найден.');
+        }
+    })
+    .catch((error) => {
+        console.error('Ошибка при запросе пользователей:', error);
+    });
+}

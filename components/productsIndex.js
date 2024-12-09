@@ -1,3 +1,4 @@
+
 export function createProductCard(product) {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
@@ -12,8 +13,47 @@ export function createProductCard(product) {
 
     likeIcon.addEventListener('click', function() {
         likeImage.src = '../assets/blueliked.png';
-        
+    
+        const currentUser = JSON.parse(localStorage.getItem('currentUser')); 
+    
+        fetch('http://localhost:3001/users')
+    .then((res) => res.json())
+    .then((users) => {
+        const user = users.find(user => user.phone === currentUser.phone); 
+
+        if (user) {
+            const productId = product.id;
+            const isProductInFavourites = user.favourites.some(fav => fav.id === productId);
+
+            if (!isProductInFavourites) {
+                user.favourites.push(product);
+
+                fetch(`http://localhost:3001/users/${user.id}`, {
+                    method: 'PUT',
+                    body: JSON.stringify(user),
+                })
+                    .then((res) => res.json())
+                    .then((updatedUser) => {
+                        console.log('Обновлено успешно:', updatedUser);
+
+                        localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+                    })
+                    .catch((error) => {
+                        console.error('Ошибка при обновлении пользователя:', error);
+                    });
+            } else {
+                console.log('Этот товар уже добавлен в "favourites".');
+            }
+        } else {
+            console.log('Пользователь не найден.');
+        }
+    })
+    .catch((error) => {
+        console.error('Ошибка при запросе пользователей:', error);
     });
+
+    });
+    
   
     const productImage = document.createElement('img');
     productImage.src = product.thumbnail || '../assets/primer.png';
